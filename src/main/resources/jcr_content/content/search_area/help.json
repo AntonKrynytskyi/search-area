@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "description": "Help page",
+  "title": "Help page",
+  "sling:resourceType": "/apps/search_area/component/core/page"
+}

@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "description": "Home Content page",
+  "title": "Home Content page",
+  "sling:resourceType": "/apps/search_area/page/home"
+}

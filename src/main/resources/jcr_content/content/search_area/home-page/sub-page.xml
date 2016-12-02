@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+    <primaryNodeType>nt:unstructured</primaryNodeType>
+    <property>
+        <name>title</name>
+        <type>String</type>
+        <value>Home page</value>
+    </property>
+
+    <property>
+        <name>description</name>
+        <type>String</type>
+        <value>KAA PRO Education project</value>
+    </property>
+
+    <property>
+        <name>sling:resourceType</name>
+        <type>String</type>
+        <value>/pro-kaa/component/page/home</value>
+    </property>
+</node>
