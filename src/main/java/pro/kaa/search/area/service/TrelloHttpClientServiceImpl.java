@@ -1,4 +1,4 @@
-package pro.kaa.search.area.service_;
+package pro.kaa.search.area.service;
 
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Reference;
@@ -24,6 +24,7 @@ public class TrelloHttpClientServiceImpl implements TrelloHttpClientService {
     private static final Logger LOG = LoggerFactory.getLogger(TrelloHttpClientServiceImpl.class);
     private HttpClient client = new DefaultHttpClient();
 
+
     @Reference
     private TrelloUrlBuilderService ulBuilder;
 
@@ -33,7 +34,7 @@ public class TrelloHttpClientServiceImpl implements TrelloHttpClientService {
             return null;
         }
 
-        return getBoardById(TrelloUrlUtil.geBoardIdFromJcrPath(path));
+        return getBoardById(TrelloUrlUtil.getBoardIdFromJcrPath(path));
     }
 
     @Override
@@ -44,6 +45,42 @@ public class TrelloHttpClientServiceImpl implements TrelloHttpClientService {
 
         String stringRepresentationOfResponse = sendGetRequest(ulBuilder
                 .setBoardId(boardId)
+                .build());
+
+        return stringRepresentationOfResponse == null ? null : stringRepresentationOfResponse;
+    }
+
+    @Override
+    public String getBoarCardsByResourcePath(String path) {
+        String boardId = TrelloUrlUtil.getBoardIdFromJcrPath(path);
+
+        String stringRepresentationOfResponse = sendGetRequest(ulBuilder
+                .setBoardId(boardId)
+                .setCards()
+                .build());
+
+        return stringRepresentationOfResponse == null ? null : stringRepresentationOfResponse;
+    }
+
+    @Override
+    public String getBoarListsByResourcePath(String path) {
+        String boardId = TrelloUrlUtil.getBoardIdFromJcrPath(path);
+
+        String stringRepresentationOfResponse = sendGetRequest(ulBuilder
+                .setBoardId(boardId)
+                .setLists()
+                .build());
+
+        return stringRepresentationOfResponse == null ? null : stringRepresentationOfResponse;
+    }
+
+    @Override
+    public String getBoarChecklistsByResourcePath(String path) {
+        String boardId = TrelloUrlUtil.getBoardIdFromJcrPath(path);
+
+        String stringRepresentationOfResponse = sendGetRequest(ulBuilder
+                .setBoardId(boardId)
+                .setChecklist()
                 .build());
 
         return stringRepresentationOfResponse == null ? null : stringRepresentationOfResponse;

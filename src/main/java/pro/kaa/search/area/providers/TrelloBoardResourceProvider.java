@@ -12,8 +12,8 @@ import org.apache.sling.spi.resource.provider.ResourceContext;
 import org.apache.sling.spi.resource.provider.ResourceProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pro.kaa.search.area.TrelloHttpClientService;
-import pro.kaa.search.area.providers.resource.TrelloBoardResource;
+import pro.kaa.search.area.TrelloResourceFactory;
+import pro.kaa.search.area.utils.trello.TrelloUrlUtil;
 
 import java.util.Iterator;
 
@@ -29,20 +29,21 @@ public class TrelloBoardResourceProvider extends ResourceProvider<TrelloBoardRes
     public static final String ROOT = "/trello/board/";
 
     @Reference
-    private TrelloHttpClientService httpClient;
+    private TrelloResourceFactory resourceFactory;
 
     @Override
     public Resource getResource(
             ResolveContext<Empty> resolveContext, String path, ResourceContext resourceContext, Resource resource) {
-        return ((path != null) && path.startsWith(ROOT)) ? createTrelloBoardResource(resolveContext, path) : null;
+
+        return path.startsWith(ROOT) ? createTrelloBoardResource(resolveContext, path) : null;
     }
 
-    private TrelloBoardResource createTrelloBoardResource(
+    private Resource createTrelloBoardResource(
             ResolveContext<Empty> resolveContext, String path) {
         try {
-            String stringJsonBoard = httpClient.getBoardByResourcePath(path);
+            String resourceType = TrelloUrlUtil.getTrelloTypeFromJcrPath(path);
 
-            return new TrelloBoardResource(stringJsonBoard, path, resolveContext.getResourceResolver());
+            return resourceFactory.getResource(resourceType, path, resolveContext.getResourceResolver());
         } catch (JSONException e) {
             LOG.error("Can not convert string json representation to JsonObject.", e);
             return null;
