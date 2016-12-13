@@ -1,4 +1,4 @@
-package pro.kaa.search.area.servlets;
+package pro.kaa.search.area.servlet;
 
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;

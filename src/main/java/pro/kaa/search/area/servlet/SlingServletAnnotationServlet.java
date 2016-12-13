@@ -1,4 +1,4 @@
-package pro.kaa.search.area.servlets;
+package pro.kaa.search.area.servlet;
 
 
 import org.apache.felix.scr.annotations.sling.SlingServlet;
