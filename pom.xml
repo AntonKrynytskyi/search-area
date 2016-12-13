@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>pro.kaa.search.area</groupId>
     <artifactId>search-area</artifactId>
@@ -59,19 +60,67 @@
         </plugins>
     </build>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.1.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.commons.json -->
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.commons.json</artifactId>
+            <version>2.0.18</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.jcr.resource -->
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.jcr.resource</artifactId>
+            <version>2.8.2</version>
+            <scope>provided</scope>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.osgi/org.osgi.service.component.annotations -->
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.service.component.annotations</artifactId>
             <version>1.3.0</version>
+            <scope>provided</scope>
         </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/org.apache.sling/org.apache.sling.servlets.resolver -->
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.servlets.resolver</artifactId>
             <version>2.4.6</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>adapter-annotations</artifactId>
+            <version>1.0.0</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -101,7 +150,7 @@
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.api</artifactId>
-            <version>2.9.0</version>
+            <version>2.15.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

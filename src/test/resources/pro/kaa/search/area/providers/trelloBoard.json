@@ -1,0 +1,43 @@
+{
+  "id": "5846760d8e49f9ebe98fc680",
+  "name": "test-bob",
+  "desc": "",
+  "descData": null,
+  "closed": false,
+  "idOrganization": null,
+  "pinned": false,
+  "url": "https://trello.com/b/47zdgoUK/test-bob",
+  "shortUrl": "https://trello.com/b/47zdgoUK",
+  "prefs": {
+    "permissionLevel": "public",
+    "voting": "disabled",
+    "comments": "members",
+    "invitations": "members",
+    "selfJoin": false,
+    "cardCovers": true,
+    "cardAging": "regular",
+    "calendarFeedEnabled": false,
+    "background": "blue",
+    "backgroundImage": null,
+    "backgroundImageScaled": null,
+    "backgroundTile": false,
+    "backgroundBrightness": "dark",
+    "backgroundColor": "#0079BF",
+    "canBePublic": true,
+    "canBeOrg": true,
+    "canBePrivate": true,
+    "canInvite": true
+  },
+  "labelNames": {
+    "green": "",
+    "yellow": "",
+    "orange": "",
+    "red": "",
+    "purple": "",
+    "blue": "",
+    "sky": "",
+    "lime": "",
+    "pink": "",
+    "black": ""
+  }
+}
