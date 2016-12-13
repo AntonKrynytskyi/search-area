@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import pro.kaa.search.area.providers.resource.TrelloBoardResource;
+import pro.kaa.search.area.providers.resource.TrelloResource;
 import pro.kaa.search.area.TrelloHttpClientService;
 
 import java.io.IOException;
@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RunWith(MockitoJUnitRunner.class)
-public class TrelloBoardResourceProviderTest {
+public class TrelloResourceProviderTest {
 
     @InjectMocks
     private TrelloBoardResourceProvider trelloBoardResourceProvider = new TrelloBoardResourceProvider();
@@ -36,7 +36,7 @@ public class TrelloBoardResourceProviderTest {
     private ResourceContext resourceContext;
 
     @Mock
-    private TrelloBoardResource trelloBoardResource;
+    private TrelloResource trelloResource;
 
     @Test
     public void shouldReturnBoardResource_whenRootPathCorrect() {
@@ -45,7 +45,7 @@ public class TrelloBoardResourceProviderTest {
                 resolveContext, "/trello/board/e23234ee234", resourceContext, resource);
 
         Assert.assertNotNull("Resus muts not be null", resource);
-        Assert.assertEquals(resource.getClass(), TrelloBoardResource.class);
+        Assert.assertEquals(resource.getClass(), TrelloResource.class);
     }
 
     @Test
@@ -73,7 +73,7 @@ public class TrelloBoardResourceProviderTest {
                 resolveContext, null, resourceContext, resource);
 
         Assert.assertNotNull("Resus muts not be null", resource);
-        Assert.assertEquals(resource.getClass(), TrelloBoardResource.class);
+        Assert.assertEquals(resource.getClass(), TrelloResource.class);
 */
     }
 
@@ -85,7 +85,7 @@ public class TrelloBoardResourceProviderTest {
                 resolveContext, path, resourceContext, resource);
 
         Assert.assertNotNull("Resus muts not be null", resource);
-        Assert.assertEquals(resource.getClass(), TrelloBoardResource.class);
+        Assert.assertEquals(resource.getClass(), TrelloResource.class);
     }
 
     @Test

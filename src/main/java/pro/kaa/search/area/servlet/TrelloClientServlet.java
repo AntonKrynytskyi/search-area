@@ -17,9 +17,10 @@ public class TrelloClientServlet extends SlingSafeMethodsServlet {
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
             throws ServletException, IOException {
-        
-        Resource resource = request.getResourceResolver().getResource("/trello/board/47zdgoUK");
 
-        response.getWriter().write(resource.toString());
+        Resource board = request.getResourceResolver().getResource("/trello/board/47zdgoUK");
+        Resource cards = request.getResourceResolver().getResource("/trello/board/47zdgoUK/cards");
+
+        response.getWriter().write( cards.toString());
     }
 }
